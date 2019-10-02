@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Menu } from 'semantic-ui-react'
+import { Container, Dropdown, Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -28,14 +28,20 @@ const Layout: React.FC = ({ children }) => {
             </Menu.Item>
           )}
           {user && (
-            <Menu.Item
-              position='right'
-              onClick={() => {
-                firebase.auth().signOut()
-              }}
-            >
-              Logout
-            </Menu.Item>
+            <Menu.Menu position='right'>
+              <Dropdown icon='user' item pointing>
+                <Dropdown.Menu>
+                  <Dropdown.Item>Profile</Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      firebase.auth().signOut()
+                    }}
+                  >
+                    Logout
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Menu>
           )}
         </Container>
       </Menu>
