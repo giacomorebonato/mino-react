@@ -29,18 +29,13 @@ const Layout: React.FC = ({ children }) => {
           )}
           {user && (
             <Menu.Menu position='right'>
-              <Dropdown icon='user' item pointing>
+              <Dropdown icon='user' item>
                 <Dropdown.Menu>
-                  <Dropdown.Item as={Link} to='/profile'>
-                    Profile
-                  </Dropdown.Item>
+                  <Dropdown.Item text='Profile' />
                   <Dropdown.Item
-                    onClick={() => {
-                      firebase.auth().signOut()
-                    }}
-                  >
-                    Logout
-                  </Dropdown.Item>
+                    text='Logout'
+                    onClick={() => firebase.auth().signOut()}
+                  />
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Menu>
