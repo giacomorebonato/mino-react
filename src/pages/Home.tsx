@@ -4,7 +4,7 @@ import { Divider, Header } from 'semantic-ui-react';
 import { useSession } from '../components/firebase';
 
 export const Home: React.FC = () => {
-  const user = useSession();
+  const { user } = useSession();
 
   return (
     <div>

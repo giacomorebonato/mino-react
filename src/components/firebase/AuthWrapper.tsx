@@ -4,10 +4,12 @@ import { useAuth } from './useAuth';
 import { UserContext } from './UserContext';
 
 const AuthWrapper: React.FC = ({ children }) => {
-  const { user } = useAuth();
+  const { initializing, user } = useAuth();
 
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ initializing, user }}>
+      {children}
+    </UserContext.Provider>
   );
 };
 

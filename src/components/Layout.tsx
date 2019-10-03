@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Dropdown, Menu } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 import styled from 'styled-components';
 
-import firebase from 'firebase/app';
 import Footer from './Footer';
-import { useSession } from './firebase';
+import { Topbar } from './Topbar';
+import { PageLoader } from './PageLoader';
+import { useAuth } from './firebase';
 
 const MainContainer = styled(Container)`
   min-height: 600px;
@@ -13,39 +13,18 @@ const MainContainer = styled(Container)`
 `;
 
 const Layout: React.FC = ({ children }) => {
-  const user = useSession();
-
+  const { initializing } = useAuth();
   return (
     <div>
-      <Menu inverted stackable>
-        <Container>
-          <Menu.Item header as={Link} to="/">
-            Mino React
-          </Menu.Item>
-          {!user && (
-            <Menu.Item as={Link} position="right" to="/signup">
-              Login
-            </Menu.Item>
-          )}
-          {user && (
-            <Menu.Menu position="right">
-              <Dropdown icon="user" item>
-                <Dropdown.Menu>
-                  <Dropdown.Item text="Profile" />
-                  <Dropdown.Item
-                    text="Logout"
-                    onClick={() => firebase.auth().signOut()}
-                  />
-                </Dropdown.Menu>
-              </Dropdown>
-            </Menu.Menu>
-          )}
-        </Container>
-      </Menu>
-
-      <MainContainer>{children}</MainContainer>
-
-      <Footer />
+      {initializing ? (
+        <PageLoader />
+      ) : (
+        <>
+          <Topbar />
+          <MainContainer>{children}</MainContainer>
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

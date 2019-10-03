@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { FirebaseAuthUI, useSession } from '../components/firebase';
 
 export const Auth: React.FC = () => {
-  const user = useSession();
+  const { user } = useSession();
 
   if (user) {
     return (
