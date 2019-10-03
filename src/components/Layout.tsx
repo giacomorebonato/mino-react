@@ -31,7 +31,9 @@ const Layout: React.FC = ({ children }) => {
             <Menu.Menu position='right'>
               <Dropdown icon='user' item pointing>
                 <Dropdown.Menu>
-                  <Dropdown.Item>Profile</Dropdown.Item>
+                  <Dropdown.Item as={Link} to='/profile'>
+                    Profile
+                  </Dropdown.Item>
                   <Dropdown.Item
                     onClick={() => {
                       firebase.auth().signOut()

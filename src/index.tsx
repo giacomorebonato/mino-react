@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './components/firebase/firebaseApp'
 import { AuthWrapper } from './components/firebase'
 import Layout from './components/Layout'
-import { Auth, Home } from './pages'
+import { Auth, Home, Profile } from './pages'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
@@ -13,7 +13,8 @@ ReactDOM.render(
     <Router>
       <Layout>
         <Route path='/' component={Home} exact />
-        <Route path='/signedIn' component={Home} exact />
+        <Route path='/profile' component={Profile} />
+        <Route path='/signedIn' component={Home} />
         <Route path='/signup' component={Auth} />
       </Layout>
     </Router>

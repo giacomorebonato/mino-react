@@ -3,7 +3,7 @@ import { Divider, Header } from 'semantic-ui-react'
 
 import { useSession } from '../components/firebase'
 
-const Home: React.FC = () => {
+export const Home: React.FC = () => {
   const user = useSession()
 
   return (
@@ -14,5 +14,3 @@ const Home: React.FC = () => {
     </div>
   )
 }
-
-export { Home }

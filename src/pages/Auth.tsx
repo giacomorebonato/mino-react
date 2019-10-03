@@ -4,7 +4,7 @@ import { FirebaseAuthUI, useSession } from '../components/firebase'
 import { Divider, Header } from 'semantic-ui-react'
 import { Redirect } from 'react-router'
 
-const Auth: React.FC = () => {
+export const Auth: React.FC = () => {
   const user = useSession()
 
   if (user) {
@@ -25,5 +25,3 @@ const Auth: React.FC = () => {
     </div>
   )
 }
-
-export { Auth }
