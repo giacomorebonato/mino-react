@@ -1,14 +1,15 @@
-import firebase from 'firebase/app'
-import 'firebase/auth'
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
-import firebaseConfig from './firebaseConfig'
+import firebaseConfig from './firebaseConfig';
 
-for (let key in firebaseConfig) {
-  let value = firebaseConfig[key]
+Object.keys(firebaseConfig).forEach(key => {
+  const value = firebaseConfig[key];
 
   if (value === undefined || value === null) {
-    console.log(`Specify ${key} in your firebaseConfig.ts`)
+    // eslint-disable-next-line no-console
+    console.log(`Specify ${key} in your firebaseConfig.ts`);
   }
-}
+});
 
-export default firebase.initializeApp(firebaseConfig)
+export default firebase.initializeApp(firebaseConfig);

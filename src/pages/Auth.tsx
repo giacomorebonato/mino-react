@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import { FirebaseAuthUI, useSession } from '../components/firebase'
-import { Divider, Header } from 'semantic-ui-react'
-import { Redirect } from 'react-router'
+import { Divider, Header } from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom';
+import { FirebaseAuthUI, useSession } from '../components/firebase';
 
 export const Auth: React.FC = () => {
-  const user = useSession()
+  const user = useSession();
 
   if (user) {
     return (
@@ -14,7 +14,7 @@ export const Auth: React.FC = () => {
           pathname: '/'
         }}
       />
-    )
+    );
   }
 
   return (
@@ -23,5 +23,5 @@ export const Auth: React.FC = () => {
       <Divider />
       <FirebaseAuthUI />
     </div>
-  )
-}
+  );
+};
