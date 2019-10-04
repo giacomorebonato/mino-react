@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Header,
   Segment,
@@ -6,7 +6,7 @@ import {
   Grid,
   List,
   Divider
-} from 'semantic-ui-react';
+} from 'semantic-ui-react'
 
 const Footer: React.FC = () => (
   <Segment
@@ -69,6 +69,6 @@ const Footer: React.FC = () => (
       </List>
     </Container>
   </Segment>
-);
+)
 
-export default Footer;
+export default Footer

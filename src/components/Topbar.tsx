@@ -1,11 +1,11 @@
-import React from 'react';
-import { Menu, Container, Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import firebase from 'firebase';
-import { useSession } from './firebase';
+import React from 'react'
+import { Menu, Container, Dropdown } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import firebase from 'firebase'
+import { useSession } from './firebase'
 
 export const Topbar: React.FC = () => {
-  const { user } = useSession();
+  const { user } = useSession()
 
   return (
     <Menu inverted stackable>
@@ -33,5 +33,5 @@ export const Topbar: React.FC = () => {
         )}
       </Container>
     </Menu>
-  );
-};
+  )
+}
