@@ -32,6 +32,7 @@
         "ignoreTemplateLiterals": true,
         "ignoreRegExpLiterals": true
       }
-    ]
+    ],
+    "@typescript-eslint/semi": [2, "never"]
   }
 }

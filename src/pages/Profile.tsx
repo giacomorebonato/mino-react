@@ -1,13 +1,13 @@
-import React from 'react';
-import { Divider, Grid, Header, Image } from 'semantic-ui-react';
+import React from 'react'
+import { Divider, Grid, Header, Image } from 'semantic-ui-react'
 
-import { Redirect } from 'react-router-dom';
-import { useSession } from '../components/firebase';
+import { Redirect } from 'react-router-dom'
+import { useSession } from '../components/firebase'
 
 export const Profile: React.FC = () => {
-  const { user } = useSession();
+  const { user } = useSession()
 
-  if (!user) return <Redirect to="/signup" />;
+  if (!user) return <Redirect to="/signup" />
 
   return (
     <div>
@@ -24,5 +24,5 @@ export const Profile: React.FC = () => {
         </Grid.Row>
       </Grid>
     </div>
-  );
-};
+  )
+}
